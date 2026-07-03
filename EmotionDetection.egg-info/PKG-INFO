@@ -1,0 +1,12 @@
+Metadata-Version: 2.4
+Name: EmotionDetection
+Version: 1.0.0
+Summary: Detector de emociones con Watson NLP
+Author: Uli0883
+Requires-Dist: requests
+Requires-Dist: flask
+Requires-Dist: pytest
+Requires-Dist: pylint
+Dynamic: author
+Dynamic: requires-dist
+Dynamic: summary

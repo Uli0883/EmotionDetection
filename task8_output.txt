@@ -1,0 +1,9 @@
+************* Module server
+server.py:35:0: C0304: Final newline missing (missing-final-newline)
+server.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+server.py:1:0: E0401: Unable to import 'flask' (import-error)
+server.py:24:0: C0116: Missing function or method docstring (missing-function-docstring)
+
+-----------------------------------
+Your code has been rated at 4.29/10
+
