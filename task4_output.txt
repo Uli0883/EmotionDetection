@@ -20,22 +20,18 @@ running build_py
 copying EmotionDetection/emotion_detection.py -> build/lib/EmotionDetection
 copying EmotionDetection/3a_output_formatting.py -> build/lib/EmotionDetection
 copying EmotionDetection/__init__.py -> build/lib/EmotionDetection
-creating build/lib/tests
+copying EmotionDetection/7b_error_handling_server.py -> build/lib/EmotionDetection
+copying EmotionDetection/8a_server_modified.py -> build/lib/EmotionDetection
+copying EmotionDetection/7a_error_handling_function.py -> build/lib/EmotionDetection
 copying tests/__init__.py -> build/lib/tests
 copying tests/test_emotion_detection.py -> build/lib/tests
 running install_lib
-creating /workspaces/EmotionDetection/.venv/lib/python3.12/site-packages/EmotionDetection
-copying build/lib/EmotionDetection/emotion_detection.py -> /workspaces/EmotionDetection/.venv/lib/python3.12/site-packages/EmotionDetection
-copying build/lib/EmotionDetection/3a_output_formatting.py -> /workspaces/EmotionDetection/.venv/lib/python3.12/site-packages/EmotionDetection
-copying build/lib/EmotionDetection/__init__.py -> /workspaces/EmotionDetection/.venv/lib/python3.12/site-packages/EmotionDetection
-creating /workspaces/EmotionDetection/.venv/lib/python3.12/site-packages/tests
-copying build/lib/tests/__init__.py -> /workspaces/EmotionDetection/.venv/lib/python3.12/site-packages/tests
-copying build/lib/tests/test_emotion_detection.py -> /workspaces/EmotionDetection/.venv/lib/python3.12/site-packages/tests
-byte-compiling /workspaces/EmotionDetection/.venv/lib/python3.12/site-packages/EmotionDetection/emotion_detection.py to emotion_detection.cpython-312.pyc
-byte-compiling /workspaces/EmotionDetection/.venv/lib/python3.12/site-packages/EmotionDetection/3a_output_formatting.py to 3a_output_formatting.cpython-312.pyc
-byte-compiling /workspaces/EmotionDetection/.venv/lib/python3.12/site-packages/EmotionDetection/__init__.py to __init__.cpython-312.pyc
-byte-compiling /workspaces/EmotionDetection/.venv/lib/python3.12/site-packages/tests/__init__.py to __init__.cpython-312.pyc
-byte-compiling /workspaces/EmotionDetection/.venv/lib/python3.12/site-packages/tests/test_emotion_detection.py to test_emotion_detection.cpython-312.pyc
+copying build/lib/EmotionDetection/7b_error_handling_server.py -> /workspaces/EmotionDetection/.venv/lib/python3.12/site-packages/EmotionDetection
+copying build/lib/EmotionDetection/8a_server_modified.py -> /workspaces/EmotionDetection/.venv/lib/python3.12/site-packages/EmotionDetection
+copying build/lib/EmotionDetection/7a_error_handling_function.py -> /workspaces/EmotionDetection/.venv/lib/python3.12/site-packages/EmotionDetection
+byte-compiling /workspaces/EmotionDetection/.venv/lib/python3.12/site-packages/EmotionDetection/7b_error_handling_server.py to 7b_error_handling_server.cpython-312.pyc
+byte-compiling /workspaces/EmotionDetection/.venv/lib/python3.12/site-packages/EmotionDetection/8a_server_modified.py to 8a_server_modified.cpython-312.pyc
+byte-compiling /workspaces/EmotionDetection/.venv/lib/python3.12/site-packages/EmotionDetection/7a_error_handling_function.py to 7a_error_handling_function.cpython-312.pyc
 running install_egg_info
 running egg_info
 writing EmotionDetection.egg-info/PKG-INFO
@@ -44,5 +40,6 @@ writing requirements to EmotionDetection.egg-info/requires.txt
 writing top-level names to EmotionDetection.egg-info/top_level.txt
 reading manifest file 'EmotionDetection.egg-info/SOURCES.txt'
 writing manifest file 'EmotionDetection.egg-info/SOURCES.txt'
+removing '/workspaces/EmotionDetection/.venv/lib/python3.12/site-packages/EmotionDetection-1.0.0-py3.12.egg-info' (and everything under it)
 Copying EmotionDetection.egg-info to /workspaces/EmotionDetection/.venv/lib/python3.12/site-packages/EmotionDetection-1.0.0-py3.12.egg-info
 running install_scripts

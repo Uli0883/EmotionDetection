@@ -1,5 +1,5 @@
-from flask import Flask, request, render_template_string
-from EmotionDetection.emotion_detection import format_output
+from flask import Flask, request, jsonify, render_template_string
+from EmotionDetection.emotion_detection import emotion_detector
 
 app = Flask(__name__)
 
@@ -11,25 +11,48 @@ HTML_TEMPLATE = '''
 </head>
 <body>
     <h1>Detector de Emociones</h1>
-    <form method="POST">
-        <input type="text" name="text" placeholder="Escribe algo..." required>
+    <form id="emotionForm">
+        <input type="text" id="textInput" placeholder="Escribe algo..." required>
         <button type="submit">Detectar Emoción</button>
     </form>
-    <p>{{ result }}</p>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('emotionForm').onsubmit = async function(e) {
+            e.preventDefault();
+            const text = document.getElementById('textInput').value;
+            const response = await fetch('/emotionDetector', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ text: text })
+            });
+            const data = await response.json();
+            if (data.error) {
+                document.getElementById('result').innerHTML = `<p style="color:red">${data.error}</p>`;
+            } else {
+                document.getElementById('result').innerHTML = `
+                    <p>For the given statement, the system response is 'anger': ${data.anger}, 'disgust': ${data.disgust}, 'fear': ${data.fear}, 'joy': ${data.joy}, 'sadness': ${data.sadness}. The dominant emotion is ${data.dominant_emotion}.</p>
+                `;
+            }
+        };
+    </script>
 </body>
 </html>
 '''
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/')
 def index():
-    result = ''
-    if request.method == 'POST':
-        text = request.form.get('text', '')
-        if text.strip():
-            result = format_output(text)
-        else:
-            result = "Por favor, ingresa un texto válido."
-    return render_template_string(HTML_TEMPLATE, result=result)
+    return render_template_string(HTML_TEMPLATE)
+
+@app.route('/emotionDetector', methods=['POST'])
+def emotion_detector_route():
+    data = request.get_json()
+    text = data.get('text', '')
+    result = emotion_detector(text)
+    if result.get('dominant_emotion'):
+        return jsonify(result)
+    else:
+        return jsonify({'error': 'Invalid text! Please try again.'}), 400
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)

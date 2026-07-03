@@ -2,9 +2,6 @@ import json
 import requests
 
 def emotion_detector(text_to_analyze):
-    """
-    Detecta emociones usando la API de Watson NLP.
-    """
     if not text_to_analyze or text_to_analyze.strip() == '':
         return {
             'error': 'Invalid text! Please try again.',

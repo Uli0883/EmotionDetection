@@ -1,9 +1,9 @@
-# Final Project: Emotion Detection
+# oaqjp-final-project-emb-ai – Final Project: Emotion Detection
 
-Este es el proyecto final del curso de IBM, que implementa una aplicación de detección de emociones utilizando Watson NLP.
+Este es el proyecto final del curso "Developing AI Applications with Python and Flask" de IBM.
 
 ## Descripción
-La aplicación recibe texto y devuelve las puntuaciones de emociones (ira, desagrado, miedo, alegría, tristeza) y la emoción dominante.
+La aplicación recibe texto en inglés y devuelve las puntuaciones de cinco emociones (ira, desagrado, miedo, alegría, tristeza) y la emoción dominante, utilizando la API de Watson NLP.
 
 ## Instalación
 ```bash
