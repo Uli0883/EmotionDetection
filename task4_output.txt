@@ -1,40 +1,4 @@
-running install
-/home/codespace/.local/lib/python3.12/site-packages/setuptools/_distutils/cmd.py:90: SetuptoolsDeprecationWarning: setup.py install is deprecated.
-!!
-
-        ********************************************************************************
-        Please avoid running ``setup.py`` directly.
-        Instead, use pypa/build, pypa/installer or other
-        standards-based tools.
-
-        This deprecation is overdue, please update your project and remove deprecated
-        calls to avoid build errors in the future.
-
-        See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.
-        ********************************************************************************
-
-!!
-  self.initialize_options()
-running build
-running build_py
-creating build/lib/EmotionDetection
-copying EmotionDetection/emotion_detection.py -> build/lib/EmotionDetection
-copying EmotionDetection/__init__.py -> build/lib/EmotionDetection
-running install_lib
-creating /home/codespace/.python/current/lib/python3.12/site-packages/EmotionDetection
-copying build/lib/EmotionDetection/emotion_detection.py -> /home/codespace/.python/current/lib/python3.12/site-packages/EmotionDetection
-copying build/lib/EmotionDetection/__init__.py -> /home/codespace/.python/current/lib/python3.12/site-packages/EmotionDetection
-byte-compiling /home/codespace/.python/current/lib/python3.12/site-packages/EmotionDetection/emotion_detection.py to emotion_detection.cpython-312.pyc
-byte-compiling /home/codespace/.python/current/lib/python3.12/site-packages/EmotionDetection/__init__.py to __init__.cpython-312.pyc
-running install_egg_info
-running egg_info
-creating EmotionDetection.egg-info
-writing EmotionDetection.egg-info/PKG-INFO
-writing dependency_links to EmotionDetection.egg-info/dependency_links.txt
-writing requirements to EmotionDetection.egg-info/requires.txt
-writing top-level names to EmotionDetection.egg-info/top_level.txt
-writing manifest file 'EmotionDetection.egg-info/SOURCES.txt'
-reading manifest file 'EmotionDetection.egg-info/SOURCES.txt'
-writing manifest file 'EmotionDetection.egg-info/SOURCES.txt'
-Copying EmotionDetection.egg-info to /home/codespace/.python/current/lib/python3.12/site-packages/EmotionDetection-1.0.0-py3.12.egg-info
-running install_scripts
+Traceback (most recent call last):
+  File "/workspaces/EmotionDetection/setup.py", line 1, in <module>
+    from setuptools import setup, find_packages
+ModuleNotFoundError: No module named 'setuptools'
