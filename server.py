@@ -1,3 +1,8 @@
+"""
+Módulo principal de la aplicación Flask para detectar emociones en texto.
+Utiliza la API de Watson NLP para analizar emociones y devuelve puntuaciones.
+"""
+
 from flask import Flask, request, jsonify, render_template_string
 from EmotionDetection.emotion_detection import emotion_detector
 
@@ -12,7 +17,7 @@ HTML_TEMPLATE = '''
 <body>
     <h1>Detector de Emociones</h1>
     <form id="emotionForm">
-        <input type="text" id="textInput" placeholder="Escribe algo..." required>
+        <input type="text" id="textInput" placeholder="Escribe algo...">
         <button type="submit">Detectar Emoción</button>
     </form>
     <div id="result"></div>
@@ -42,17 +47,21 @@ HTML_TEMPLATE = '''
 
 @app.route('/')
 def index():
+    """Página principal que muestra el formulario HTML."""
     return render_template_string(HTML_TEMPLATE)
 
 @app.route('/emotionDetector', methods=['POST'])
 def emotion_detector_route():
+    """
+    Recibe texto JSON, lo analiza con emotion_detector y devuelve puntuaciones.
+    Si el texto es inválido, devuelve un error 400 con un mensaje.
+    """
     data = request.get_json()
     text = data.get('text', '')
     result = emotion_detector(text)
     if result.get('dominant_emotion'):
         return jsonify(result)
-    else:
-        return jsonify({'error': 'Invalid text! Please try again.'}), 400
+    return jsonify({'error': 'Invalid text! Please try again.'}), 400
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
